@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+	<div class="container py-5 cw-60">
+		<div class="card bg-light">
+			<div class="card-header">
+				<h3 class="text-orange" th:text="${titulo}"></h3>
+			</div>
+			<div class="card-body">
+				<form method="POST" th:object="${calificacion}" th:action="@{/procesarform}">
+					<div class="mb-3">
+						<label for="asignatura">Asignatura</label>
+						<input type="text" class="form-control form-control-sm" th:field="*{asignatura}"/>
+					</div>
+                    <div class="mb-3">
+                        <label for="departamento">Departamento</label>
+                        <select class="form-select form-select-sm" th:field="*{departamento}">
+                            <option value="">Seleccionar...</option>
+                            <option th:each="dep : ${departamentos}" th:value="${dep}" th:text="${dep}"></option>
+                        </select>
+                    </div>
+					<div class="mb-3">
+						<label for="nota">Nota</label>
+						<input type="number" class="form-control form-control-sm" min="0" max="5" step="0.1" th:field="*{nota}"/>
+					</div>                    
+					<div class="mb-3">
+						<label for="faltas">Faltas</label>
+						<input type="number" class="form-control form-control-sm" min="0" th:field="*{faltas}"/>
+					</div>
+                    <div class="mb-3">
+                        <label for="fecha">Fecha</label>
+                        <input type="date" th:field="*{fecha}" class="form-control form-control-sm">
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input type="checkbox" th:field="*{validado}" class="form-check-input">
+                            <label for="validado" class="form-check-label">Validado ?</label>
+                        </div>
+                    </div>
+                    <div class="d-grid col-5 mx-auto mb-3">
+                        <input type="submit" value="Enviar" class="btn btn-orange">
+                    </div>                   
+                </form>
+            </div>
+        </div>
+    </div>                   
+    
+</body>
+</html>
