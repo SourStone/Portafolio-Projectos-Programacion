@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=3 uid="uid://dyjhmc1bu3h2v"]
+
+[ext_resource type="Script" path="res://parts/player/Player.gd" id="1_ij5uw"]
+[ext_resource type="Texture2D" uid="uid://64aprskrdli6" path="res://assets/sprites/character/character11.png" id="2_jikm2"]
+[ext_resource type="Script" path="res://parts/player/camera_position.gd" id="3_jpgqg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aa2ku"]
+radius = 22.0
+height = 50.0
+
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 3
+script = ExtResource("1_ij5uw")
+number_of_coins = 13
+
+[node name="HealthLabel" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -48.0
+offset_right = 23.0
+offset_bottom = -25.0
+text = "10/10"
+
+[node name="CoinLabel" type="Label" parent="."]
+offset_left = -44.0
+offset_top = -71.0
+offset_right = 50.0
+offset_bottom = -48.0
+text = "PlaceHolder"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3, 3)
+texture = ExtResource("2_jikm2")
+
+[node name="CameraPosition" type="Node2D" parent="."]
+script = ExtResource("3_jpgqg")
+
+[node name="Camera2D" type="Camera2D" parent="CameraPosition"]
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.1
+drag_top_margin = 0.1
+drag_right_margin = 0.1
+drag_bottom_margin = 0.1
+editor_draw_drag_margin = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_aa2ku")
+
+[node name="ShootTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="ShootTimer" to="." method="_on_shoot_timer_timeout"]

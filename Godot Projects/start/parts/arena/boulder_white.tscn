@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7jrklxev7f8w"]
+
+[ext_resource type="PackedScene" uid="uid://dqimb1a8qe4ny" path="res://parts/arena/boulder.tscn" id="1_hvow7"]
+
+[node name="Boulder" instance=ExtResource("1_hvow7")]
+color = Color(0.709804, 0.654902, 0.588235, 1)

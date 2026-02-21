@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://sp2c0klv3bsv"]
+
+[ext_resource type="PackedScene" uid="uid://brnucpugvjk18" path="res://parts/collectibles/collectible.tscn" id="1_nc5i5"]
+[ext_resource type="Script" path="res://parts/collectibles/coin.gd" id="2_ff8ma"]
+[ext_resource type="Texture2D" uid="uid://03613n040ju2" path="res://assets/sprites/collectibles/coin.png" id="2_xh3vl"]
+
+[node name="Coin" instance=ExtResource("1_nc5i5")]
+script = ExtResource("2_ff8ma")
+value = 1
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(2, 2)
+texture = ExtResource("2_xh3vl")

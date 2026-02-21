@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://s8g4i1qvg3b5"]
+
+[ext_resource type="PackedScene" uid="uid://brnucpugvjk18" path="res://parts/collectibles/collectible.tscn" id="1_3fpd4"]
+[ext_resource type="Texture2D" uid="uid://dtcu32oasjseu" path="res://assets/sprites/collectibles/health_potion.png" id="2_csxik"]
+[ext_resource type="Script" path="res://parts/collectibles/health_potion.gd" id="2_y33as"]
+
+[node name="Collectible" instance=ExtResource("1_3fpd4")]
+script = ExtResource("2_y33as")
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(2, 2)
+texture = ExtResource("2_csxik")

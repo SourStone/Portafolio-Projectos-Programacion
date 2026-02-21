@@ -1,0 +1,38 @@
+extends Control
+
+#Caching objects
+@onready var _ip_address_line_edit = $CenterContainer/MainUIContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/IpAddressLineEdit
+@onready var highscore_label: Label = $CenterContainer/MainUIContainer/PanelContainer/MarginContainer/VBoxContainer/VBoxContainer/HighscoreLabel
+
+const PORT: int = 7890
+
+func _ready():
+	highscore_label.text = "Highscore: " + str(HighscoreManager.highscore)
+
+#Play the game by changing to the game screen
+func _on_play_button_pressed():
+	if _ip_address_line_edit.text.is_empty():
+		host_game()
+	else:
+		connect_to_game(_ip_address_line_edit.text)
+	get_tree().change_scene_to_file("res://screens/game/main.tscn")
+
+#exit the game
+func _on_exit_button_pressed():
+	get_tree().quit()
+
+#networking
+func host_game():
+	var peer = ENetMultiplayerPeer.new()
+	peer.create_server(PORT)
+	if peer.get_connection_status() == MultiplayerPeer.CONNECTION_DISCONNECTED:
+		return
+	multiplayer.multiplayer_peer = peer
+
+func connect_to_game(ip_address: String):
+	var peer = ENetMultiplayerPeer.new()
+	peer.create_client(ip_address, PORT)
+	print(peer.get_connection_status())
+	if peer.get_connection_status() == MultiplayerPeer.CONNECTION_DISCONNECTED:
+		return
+	multiplayer.multiplayer_peer = peer

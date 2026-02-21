@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dqimb1a8qe4ny"]
+
+[node name="Boulder" type="Polygon2D"]
+color = Color(0.313726, 0.309804, 0.317647, 1)
+polygon = PackedVector2Array(5, 104, -16, 342, 267, 321, 283, 203, 221, 102)
+metadata/_edit_horizontal_guides_ = [119.0]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(216, 104, 281, 203, 265, 318, -16, 344, 10, 111)

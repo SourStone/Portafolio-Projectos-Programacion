@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://brrwunk31uctp"]
+
+[ext_resource type="PackedScene" uid="uid://dqimb1a8qe4ny" path="res://parts/arena/boulder.tscn" id="1_rfyo4"]
+
+[node name="Boulder" instance=ExtResource("1_rfyo4")]
+color = Color(0.411765, 0.129412, 0.12549, 1)
+polygon = PackedVector2Array(5, 104, -16, 342, 174, 299, 283, 203, 289, 23)
+
+[node name="CollisionPolygon2D" parent="StaticBody2D" index="0"]
+polygon = PackedVector2Array(288, 22, 281, 203, 174, 303, -16, 344, 7, 103)
