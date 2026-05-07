@@ -1,24 +1,19 @@
-# Leather Defect Detection using Custom CNN 🧥🔍
+# 📚 University Project Library | Ingeniería de Sistemas
 
-## 📌 Project Overview
-This project focuses on **Automated Quality Control** for the leather industry. I developed a custom Deep Learning model to identify defects in raw, untreated leather. By automating the visual inspection process, this solution aims to reduce human error and optimize the selection of high-quality materials in manufacturing.
+¡Bienvenido! Este repositorio es una bitácora técnica de mis retos y "aventuras algorítmicas" desarrolladas durante mi formación profesional. Aquí documento la evolución de mi lógica de programación y la resolución de problemas complejos.
 
-## 🚀 Key Features
-- **Custom CNN Architecture:** Built from scratch using TensorFlow and Keras to understand the fundamental layers of pattern recognition.
-- **Defect Identification:** Specifically trained to recognize patterns and anomalies in untreated leather surfaces.
-- **High Accuracy:** Achieved over **90% precision** in controlled environments, demonstrating a strong proof-of-concept for industrial application.
+> **Status:** En constante actualización con nuevos proyectos y desafíos técnicos.
 
-## 🛠️ Tech Stack
-- **Language:** Python 3
-- **Deep Learning:** TensorFlow & Keras
-- **Data Manipulation:** NumPy
-- **Dataset:** Sourced from Kaggle (Raw Leather Image Dataset)
+## 🚀 Lo que encontrarás aquí
+Una colección de soluciones enfocadas en:
+*   **Algoritmos y Lógica:** Resolución de problemas de alta complejidad basados en necesidades reales.
+*   **Estructuras de Datos:** Implementaciones de estructuras relacionales eficientes para el manejo de información.
+*   **Paradigm Shift:** Proyectos que transitan desde la programación funcional hasta la orientada a objetos.
 
-## 📊 Performance
-- **Training Accuracy:** >90%
-- **Context:** Tested under controlled variables to ensure reliable pattern identification.
-- **Goal:** To serve as a baseline for real-time defect detection in industrial leather processing.
+## 🛠️ Tecnologías Destacadas
+`Java` `Python` `SQL` `JavaScript`
 
-## 👷 Author
-**Ricardo Garcia**
-*Systems Engineer | AI & Deep Learning Enthusiast*
+---
+
+## 📈 Próximamente
+Actualmente me encuentro desarrollando proyectos enfocados en **Desarrollo Web (Full Stack)** y aplicaciones en la nube, los cuales serán integrados próximamente a esta biblioteca.
